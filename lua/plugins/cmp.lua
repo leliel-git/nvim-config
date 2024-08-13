@@ -24,12 +24,9 @@ return {
 			mapping = cmp.mapping.preset.insert({
 				["<C-k>"] = cmp.mapping.select_prev_item(),
 				["<C-j>"] = cmp.mapping.select_next_item(),
-				["<C-d>"] = cmp.mapping.scroll_docs(-4),
+				["<C-b>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
-				["<CR>"] = cmp.mapping.confirm({
-					behavior = cmp.ConfirmBehavior.Replace,
-					select = false,
-				}),
+				["<CR>"]  = cmp.mapping.confirm({ select = true }),
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
@@ -49,7 +46,6 @@ return {
 					end
 				end, { "i", "s" }),
 			}),
-
 			formatting = {
 				fields = { "abbr", "menu" },
 				format = function(entry, vim_item)
@@ -67,6 +63,7 @@ return {
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
+				
 			},
 			window = {
 				completion = cmp.config.window.bordered(),
