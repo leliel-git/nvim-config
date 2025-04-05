@@ -2,10 +2,9 @@ return {
 	'nyngwang/nvimgelion',
 	config = function ()
 		vim.cmd [[
-			color nvimgelion
+			colorscheme nvimgelion
 			hi Normal guibg=NONE
-			hi Comment guifg=NONE
-			set termguicolors
+			hi Comment guifg=#777777
 		]]
 	end
 }
